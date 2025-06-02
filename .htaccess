@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /CodeExpertsEcommerce/
+
+# If the requested file or directory exists, serve it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all requests to index.php while preserving query string
+RewriteRule ^(.*)$ index.php [L,QSA] 
